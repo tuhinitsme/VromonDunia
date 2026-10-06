@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="VromonDunia offers complete travel solutions including flights, hotels, visas, tours, insurance, and airport transfers." />
+  <meta name="description" content="VromonDunia offers complete travel solutions including flights, hotels, visas, tours, insurance, and airport transfers. Serving Bangladesh, Malaysia, and beyond." />
   <title>VromonDunia | Complete Travel Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/script.js"></script>
   <script defer src="https://kit.fontawesome.com/yourkitid.js"></script>
 </head>
 <body>
@@ -21,6 +22,7 @@
 
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#home">Home</a>
+        <a href="#search">Find Trip</a>
         <a href="#services">Services</a>
         <a href="#packages">Packages</a>
         <a href="#about">About</a>
@@ -39,19 +41,20 @@
     <section class="hero" id="home">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow">Your trusted travel partner</p>
+          <p class="eyebrow">Your trusted travel partner from Bangladesh</p>
           <h1>Explore the world with complete travel solutions.</h1>
           <p class="hero-text">
-            From flight bookings and hotel stays to visa assistance, tour packages, and ground transport, VromonDunia makes every journey smooth, affordable, and memorable.
+            From flight bookings and hotel stays to visa assistance, tour packages, and ground transport, VromonDunia makes every journey smooth, affordable, and memorable. Trusted by travelers across Bangladesh and beyond.
           </p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#services">Explore Services</a>
-            <a class="btn btn-secondary" href="#contact">Plan My Trip</a>
+            <a class="btn btn-primary" href="#search">Find Your Trip</a>
+            <a class="btn btn-secondary" href="#contact">Plan My Journey</a>
           </div>
           <ul class="hero-points" aria-label="Travel benefits">
-            <li>24/7 travel support</li>
+            <li>24/7 support</li>
             <li>Best price guarantee</li>
-            <li>Custom itineraries</li>
+            <li>Visa expert guidance</li>
+            <li>Bangladesh-focused service</li>
           </ul>
         </div>
 
@@ -59,21 +62,21 @@
           <div class="trip-box">
             <div class="feature-top">
               <span class="status-dot"></span>
-              <span>Best travel offers</span>
+              <span>Popular route</span>
             </div>
-            <h3>Summer Escape</h3>
+            <h3>Malaysia Adventure</h3>
             <div class="mini-grid">
               <div>
                 <small>Destination</small>
-                <strong>Maldives</strong>
+                <strong>Kuala Lumpur</strong>
               </div>
               <div>
                 <small>Duration</small>
-                <strong>7 Days</strong>
+                <strong>5 Days</strong>
               </div>
               <div>
                 <small>From</small>
-                <strong>$1,299</strong>
+                <strong>৳45,000</strong>
               </div>
               <div>
                 <small>Includes</small>
@@ -81,6 +84,78 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="destination-search" id="search">
+      <div class="container">
+        <div class="search-header">
+          <h2>Where would you like to go?</h2>
+          <p>Search for your next journey from Bangladesh</p>
+        </div>
+
+        <div class="search-box">
+          <div class="search-input-group">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              id="destinationSearch"
+              class="destination-input"
+              placeholder="Search destination, country, or experience..."
+              aria-label="Search destinations"
+            />
+          </div>
+          <button class="search-btn" aria-label="Search">
+            <i class="fa-solid fa-arrow-right"></i> Search
+          </button>
+        </div>
+
+        <div class="popular-destinations">
+          <h3>Popular destinations from Bangladesh</h3>
+          <div class="destination-grid">
+            <div class="dest-card">
+              <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579a4e?auto=format&fit=crop&w=900&q=80" alt="Thailand" />
+              <h4>Thailand</h4>
+              <p>Bangkok, Phuket, Krabi</p>
+              <span class="price">From ৳22,000</span>
+            </div>
+            <div class="dest-card">
+              <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&q=80" alt="Malaysia" />
+              <h4>Malaysia</h4>
+              <p>KL, Penang, Langkawi</p>
+              <span class="price">From ৳18,000</span>
+            </div>
+            <div class="dest-card">
+              <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&q=80" alt="Singapore" />
+              <h4>Singapore</h4>
+              <p>Gardens, Marina Bay</p>
+              <span class="price">From ৳25,000</span>
+            </div>
+            <div class="dest-card">
+              <img src="https://images.unsplash.com/photo-1573790387438-4da905039392?auto=format&fit=crop&w=900&q=80" alt="Indonesia" />
+              <h4>Indonesia</h4>
+              <p>Bali, Jakarta, Yogyakarta</p>
+              <span class="price">From ৳15,000</span>
+            </div>
+            <div class="dest-card">
+              <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=80" alt="Maldives" />
+              <h4>Maldives</h4>
+              <p>Male, beach resorts</p>
+              <span class="price">From ৳35,000</span>
+            </div>
+            <div class="dest-card">
+              <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=80" alt="Europe" />
+              <h4>Europe</h4>
+              <p>Paris, London, Rome</p>
+              <span class="price">From ৳65,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="searchResults" class="search-results" style="display:none;">
+          <h3>Search Results for: <span id="searchQuery"></span></h3>
+          <div id="resultsContainer" class="destination-grid"></div>
         </div>
       </div>
     </section>
@@ -96,37 +171,37 @@
           <article class="service-card">
             <div class="icon-wrap"><i class="fa-solid fa-plane"></i></div>
             <h3>Flight Booking</h3>
-            <p>Book domestic and international flights with flexible options, competitive fares, and real-time travel assistance.</p>
+            <p>Book domestic and international flights with flexible options, competitive fares, and real-time assistance.</p>
           </article>
 
           <article class="service-card">
             <div class="icon-wrap"><i class="fa-solid fa-hotel"></i></div>
             <h3>Hotel Booking</h3>
-            <p>Find handpicked stays from luxury resorts to value-friendly accommodations suited to your trip style.</p>
+            <p>Find handpicked stays from boutique hotels to luxury resorts that match your budget and style.</p>
           </article>
 
           <article class="service-card">
             <div class="icon-wrap"><i class="fa-solid fa-passport"></i></div>
             <h3>Visa Assistance</h3>
-            <p>Get expert guidance for visa applications, document preparation, and country-specific requirements.</p>
+            <p>Get expert guidance for visa applications, document preparation, and destination-specific requirements.</p>
           </article>
 
           <article class="service-card">
             <div class="icon-wrap"><i class="fa-solid fa-map-location-dot"></i></div>
             <h3>Tour Packages</h3>
-            <p>Choose curated adventures for families, couples, solo travelers, and corporate groups with personalized itineraries.</p>
+            <p>Choose curated adventures for families, couples, solo travelers, and corporate groups.</p>
           </article>
 
           <article class="service-card">
             <div class="icon-wrap"><i class="fa-solid fa-shield-heart"></i></div>
             <h3>Travel Insurance</h3>
-            <p>Travel confidently with protection for medical emergencies, delays, baggage, and trip interruptions.</p>
+            <p>Travel confidently with protection for medical emergencies, delays, baggage, and interruptions.</p>
           </article>
 
           <article class="service-card">
             <div class="icon-wrap"><i class="fa-solid fa-car-side"></i></div>
-            <h3>Transportation</h3>
-            <p>Enjoy airport transfers, private cabs, group transport, and local travel support throughout your destination.</p>
+            <h3>Airport Transfers</h3>
+            <p>Enjoy secure airport pickups, private cabs, and local transport support from arrival to departure.</p>
           </article>
         </div>
       </div>
@@ -136,22 +211,22 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow dark">Featured trips</p>
-          <h2>Popular travel packages</h2>
+          <h2>Popular packages for Bangladeshi travelers</h2>
         </div>
 
         <div class="package-grid">
           <article class="package-card package-one">
             <div class="package-overlay"></div>
             <div class="package-content">
-              <p>Europe</p>
-              <h3>Europe Classic</h3>
+              <p>Asia</p>
+              <h3>Thailand Paradise</h3>
               <ul>
-                <li>10 days</li>
-                <li>Flights + hotels</li>
-                <li>City tours</li>
+                <li>7 days</li>
+                <li>Bangkok + Phuket</li>
+                <li>Flights, hotel, tours</li>
               </ul>
               <div class="package-meta">
-                <span>From $1,299</span>
+                <span>From ৳22,000</span>
                 <a href="#contact">Book now</a>
               </div>
             </div>
@@ -160,15 +235,15 @@
           <article class="package-card package-two">
             <div class="package-overlay"></div>
             <div class="package-content">
-              <p>Asia</p>
-              <h3>Southeast Asia</h3>
+              <p>Malaysia</p>
+              <h3>Malaysia Explorer</h3>
               <ul>
-                <li>12 days</li>
-                <li>Island tours</li>
+                <li>5 days</li>
+                <li>KL + Langkawi</li>
                 <li>Airport transfers</li>
               </ul>
               <div class="package-meta">
-                <span>From $899</span>
+                <span>From ৳18,000</span>
                 <a href="#contact">Book now</a>
               </div>
             </div>
@@ -181,11 +256,11 @@
               <h3>Maldives Escape</h3>
               <ul>
                 <li>7 days</li>
-                <li>Beach resort</li>
-                <li>Private transfers</li>
+                <li>Resort stay</li>
+                <li>All-inclusive package</li>
               </ul>
               <div class="package-meta">
-                <span>From $1,599</span>
+                <span>From ৳35,000</span>
                 <a href="#contact">Book now</a>
               </div>
             </div>
@@ -197,10 +272,10 @@
     <section class="about" id="about">
       <div class="container about-inner">
         <div class="about-copy">
-          <p class="eyebrow dark">Why choose us</p>
+          <p class="eyebrow dark">Why VromonDunia</p>
           <h2>Travel planning that feels effortless.</h2>
           <p>
-            VromonDunia brings together destination expertise, transparent pricing, and responsive support so your travel plans are not just booked, but truly enjoyed.
+            VromonDunia brings together destination expertise, transparent pricing, and responsive support so your travel plans are not just booked, but truly enjoyed. We help travelers from Bangladesh plan smarter, cheaper, and smoother journeys.
           </p>
           <div class="feature-list">
             <div class="feature-item">
@@ -226,6 +301,7 @@
             </div>
           </div>
         </div>
+
         <div class="stats-panel">
           <div class="stat-box">
             <strong>10K+</strong>
@@ -253,24 +329,28 @@
         <div class="contact-wrap">
           <div class="contact-info">
             <div class="info-item">
-              <i class="fa-solid fa-location-dot"></i>
+              <i class="fa-solid fa-map-location-dot"></i>
               <div>
-                <h3>Office</h3>
-                <p>Your city, country</p>
+                <h3>Offices</h3>
+                <p><strong>Rajshahi:</strong> Shaheb Bazar, Rajshahi</p>
+                <p><strong>Dhaka:</strong> Dhanmondi, Dhaka</p>
+                <p><strong>Malaysia:</strong> Kuala Lumpur, KL</p>
               </div>
             </div>
             <div class="info-item">
               <i class="fa-solid fa-phone"></i>
               <div>
                 <h3>Phone</h3>
-                <p>+1 (555) 123-4567</p>
+                <p>+880171100000</p>
+                <p><small>Available 24/7</small></p>
               </div>
             </div>
             <div class="info-item">
               <i class="fa-solid fa-envelope"></i>
               <div>
                 <h3>Email</h3>
-                <p>info@vromondunia.com</p>
+                <p>hello@vromondunia.com</p>
+                <p><small>Response within 2 hours</small></p>
               </div>
             </div>
           </div>
@@ -339,6 +419,10 @@
     </div>
   </footer>
 
-  <script src="assets/js/script.js"></script>
+  <div class="construction-banner" aria-live="polite">
+    <strong><i class="fa-solid fa-hourglass-half"></i> Website Under Construction</strong>
+    <p>We are currently building a better travel experience for Bangladesh and beyond. Be notified when we launch.</p>
+  </div>
+
 </body>
 </html>
