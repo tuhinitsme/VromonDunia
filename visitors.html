@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VromonDunia Visitor Analytics - Track real-time visitor activity on our website" />
+  <title>Visitor Analytics | VromonDunia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/visitors.css" />
+  <script defer src="https://kit.fontawesome.com/yourkitid.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="VromonDunia home">
+        <span class="brand-mark">V</span>
+        <span>VromonDunia</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="visitors.html" class="active">Analytics</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="analytics-main">
+    <!-- Header Section -->
+    <section class="analytics-header">
+      <div class="container">
+        <h1>Visitor Analytics Dashboard</h1>
+        <p class="subtitle">Real-time tracking of VromonDunia website visitors | Under Construction</p>
+      </div>
+    </section>
+
+    <!-- Stats Overview -->
+    <section class="stats-overview">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon visitors-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="stat-content">
+              <p class="stat-label">Total Visitors</p>
+              <h3 class="stat-value" id="totalVisitors">0</h3>
+              <span class="stat-change">Today</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon online-icon">
+              <i class="fa-solid fa-circle-dot"></i>
+            </div>
+            <div class="stat-content">
+              <p class="stat-label">Currently Online</p>
+              <h3 class="stat-value" id="onlineVisitors">0</h3>
+              <span class="stat-change">Live</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon pageview-icon">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="stat-content">
+              <p class="stat-label">Page Views</p>
+              <h3 class="stat-value" id="pageViews">0</h3>
+              <span class="stat-change">Today</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon engagement-icon">
+              <i class="fa-solid fa-fire"></i>
+            </div>
+            <div class="stat-content">
+              <p class="stat-label">Engagement Rate</p>
+              <h3 class="stat-value" id="engagementRate">0%</h3>
+              <span class="stat-change">Average</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real-time Visitors List -->
+    <section class="visitors-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Real-time Visitor Activity</h2>
+          <button class="refresh-btn" id="refreshBtn" aria-label="Refresh data">
+            <i class="fa-solid fa-arrows-rotate"></i> Refresh
+          </button>
+        </div>
+
+        <div class="visitors-table-wrap">
+          <table class="visitors-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Visitor ID</th>
+                <th>Visit Time</th>
+                <th>Current Page</th>
+                <th>Location</th>
+                <th>Device</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="visitorsTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+          <i class="fa-solid fa-inbox"></i>
+          <p>No visitor data available yet. Data will appear here as visitors browse the website.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visitor Breakdown -->
+    <section class="visitor-breakdown">
+      <div class="container">
+        <h2>Visitor Breakdown</h2>
+        <div class="breakdown-grid">
+          <div class="breakdown-card">
+            <h3>By Location</h3>
+            <ul class="breakdown-list" id="locationList">
+              <li class="empty-item"><i class="fa-solid fa-map-location-dot"></i> No location data</li>
+            </ul>
+          </div>
+
+          <div class="breakdown-card">
+            <h3>By Device</h3>
+            <ul class="breakdown-list" id="deviceList">
+              <li class="empty-item"><i class="fa-solid fa-mobile"></i> No device data</li>
+            </ul>
+          </div>
+
+          <div class="breakdown-card">
+            <h3>By Page</h3>
+            <ul class="breakdown-list" id="pageList">
+              <li class="empty-item"><i class="fa-solid fa-file"></i> No page data</li>
+            </ul>
+          </div>
+
+          <div class="breakdown-card">
+            <h3>Popular Services</h3>
+            <ul class="breakdown-list" id="serviceList">
+              <li>✈️ Flight Booking</li>
+              <li>🏨 Hotel Booking</li>
+              <li>📋 Visa Assistance</li>
+              <li>🗺️ Tour Packages</li>
+              <li>🛡️ Travel Insurance</li>
+              <li>🚗 Transportation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Peak Hours Chart -->
+    <section class="peak-hours">
+      <div class="container">
+        <h2>Visitor Traffic (Peak Hours)</h2>
+        <div class="chart-container">
+          <div class="hours-chart" id="hoursChart">
+            <div class="hour-bar" style="height: 20%"><span>00:00</span></div>
+            <div class="hour-bar" style="height: 15%"><span>02:00</span></div>
+            <div class="hour-bar" style="height: 10%"><span>04:00</span></div>
+            <div class="hour-bar" style="height: 35%"><span>06:00</span></div>
+            <div class="hour-bar" style="height: 60%"><span>08:00</span></div>
+            <div class="hour-bar" style="height: 75%"><span>10:00</span></div>
+            <div class="hour-bar" style="height: 85%"><span>12:00</span></div>
+            <div class="hour-bar" style="height: 70%"><span>14:00</span></div>
+            <div class="hour-bar" style="height: 80%"><span>16:00</span></div>
+            <div class="hour-bar" style="height: 90%"><span>18:00</span></div>
+            <div class="hour-bar" style="height: 65%"><span>20:00</span></div>
+            <div class="hour-bar" style="height: 40%"><span>22:00</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit Source -->
+    <section class="visit-sources">
+      <div class="container">
+        <h2>Traffic Sources</h2>
+        <div class="sources-grid">
+          <div class="source-card">
+            <div class="source-icon direct">
+              <i class="fa-solid fa-link"></i>
+            </div>
+            <h3>Direct</h3>
+            <p class="source-count">45%</p>
+          </div>
+          <div class="source-card">
+            <div class="source-icon organic">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <h3>Search Engines</h3>
+            <p class="source-count">35%</p>
+          </div>
+          <div class="source-card">
+            <div class="source-icon social">
+              <i class="fa-solid fa-share-nodes"></i>
+            </div>
+            <h3>Social Media</h3>
+            <p class="source-count">15%</p>
+          </div>
+          <div class="source-card">
+            <div class="source-icon referral">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </div>
+            <h3>Referral</h3>
+            <p class="source-count">5%</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Status Banner -->
+    <section class="status-banner">
+      <div class="container">
+        <div class="banner-content">
+          <h3>⚠️ Website Status: Under Construction</h3>
+          <p>We're actively developing VromonDunia to provide you with the best travel solutions. This analytics page will track all visitor activity once the site goes live.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html">
+          <span class="brand-mark">V</span>
+          <span>VromonDunia</span>
+        </a>
+        <p>Your travel companion for unforgettable experiences and seamless journeys.</p>
+      </div>
+      <div>
+        <h3>Quick links</h3>
+        <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#packages">Packages</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Analytics</h3>
+        <ul>
+          <li><a href="visitors.html">Visitor Tracking</a></li>
+          <li><a href="#traffic">Traffic Analysis</a></li>
+          <li><a href="#reports">Reports</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Newsletter</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Email address" aria-label="Email address" />
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 VromonDunia. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/visitors.js"></script>
+</body>
+</html>
