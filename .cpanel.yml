@@ -1,0 +1,7 @@
+---
+deployment:
+  targets:
+    VromonDunia:
+      domain: vromondunia.com
+      path: /public_html
+      branch: main
