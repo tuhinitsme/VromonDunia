@@ -42,6 +42,52 @@
       </div>
     </section>
 
+    <!-- Email Subscription Section -->
+    <section class="email-subscription">
+      <div class="container">
+        <div class="subscription-card">
+          <div class="subscription-content">
+            <div class="subscription-icon">
+              <i class="fa-solid fa-bell"></i>
+            </div>
+            <h2>Stay Updated!</h2>
+            <p>Get notified when VromonDunia launches new features and special travel offers. We'll keep you in the loop about our journey to becoming your complete travel solution provider.</p>
+            
+            <form class="email-form" id="emailSubscriptionForm">
+              <div class="form-group">
+                <input 
+                  type="email" 
+                  id="visitorEmail" 
+                  class="email-input" 
+                  placeholder="Enter your email address" 
+                  aria-label="Email address"
+                />
+                <button type="submit" class="submit-btn">
+                  <i class="fa-solid fa-paper-plane"></i> Notify Me
+                </button>
+              </div>
+              <p class="form-note">
+                <i class="fa-solid fa-shield-check"></i> 
+                No spam, unsubscribe anytime. Optional - share your email to stay updated.
+              </p>
+            </form>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message" style="display: none;">
+              <i class="fa-solid fa-circle-check"></i>
+              <p>Thanks! We've saved your email. You'll hear from us soon.</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message" style="display: none;">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <p>Please enter a valid email address.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Stats Overview -->
     <section class="stats-overview">
       <div class="container">
@@ -87,6 +133,17 @@
               <p class="stat-label">Engagement Rate</p>
               <h3 class="stat-value" id="engagementRate">0%</h3>
               <span class="stat-change">Average</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon subscribers-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="stat-content">
+              <p class="stat-label">Email Subscribers</p>
+              <h3 class="stat-value" id="subscriberCount">0</h3>
+              <span class="stat-change">Total</span>
             </div>
           </div>
         </div>
@@ -235,7 +292,7 @@
       <div class="container">
         <div class="banner-content">
           <h3>⚠️ Website Status: Under Construction</h3>
-          <p>We're actively developing VromonDunia to provide you with the best travel solutions. This analytics page will track all visitor activity once the site goes live.</p>
+          <p>We're actively developing VromonDunia to provide you with the best travel solutions. This analytics page will track all visitor activity once the site goes live. Join our mailing list above to stay updated!</p>
         </div>
       </div>
     </section>
@@ -281,5 +338,56 @@
   </footer>
 
   <script src="assets/js/visitors.js"></script>
+  <script>
+    // Email subscription handler
+    const emailForm = document.getElementById('emailSubscriptionForm');
+    const emailInput = document.getElementById('visitorEmail');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+    const subscriberCountEl = document.getElementById('subscriberCount');
+
+    // Load subscriber count from localStorage
+    function updateSubscriberCount() {
+      const subscribers = JSON.parse(localStorage.getItem('vromondunia_subscribers') || '[]');
+      subscriberCountEl.textContent = subscribers.length;
+    }
+
+    updateSubscriberCount();
+
+    emailForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = emailInput.value.trim();
+
+      // Hide previous messages
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        errorMessage.style.display = 'flex';
+        return;
+      }
+
+      // Store email in localStorage (in production, send to backend)
+      let subscribers = JSON.parse(localStorage.getItem('vromondunia_subscribers') || '[]');
+      
+      // Check if email already exists
+      if (!subscribers.includes(email)) {
+        subscribers.push(email);
+        localStorage.setItem('vromondunia_subscribers', JSON.stringify(subscribers));
+      }
+
+      // Show success message
+      successMessage.style.display = 'flex';
+      emailInput.value = '';
+      updateSubscriberCount();
+
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 5000);
+    });
+  </script>
 </body>
 </html>
