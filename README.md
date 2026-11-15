@@ -178,6 +178,7 @@ For issues, questions, or suggestions:
 - Google Fonts for typography
 - Our amazing team at VromonDunia
 - All our travelers and partners
+- Full Team
 
 ---
 
